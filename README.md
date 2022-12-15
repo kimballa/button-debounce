@@ -41,3 +41,25 @@ void myBtnHandler(uint8_t btnId, uint8_t btnState) {
 }
 ```
 
+Compiling
+---------
+
+Find the `debounce` library in the Arduino IDE and add it to your project; make sure to
+`#include <debounce.h>`.
+
+Alternatively, I build this with my [Arduino
+makefile](https://github.com/kimballa/arduino-makefile):
+
+* Clone the makefile project such that `arduino-makefile/` is a sibling of this project directory.
+* Create `~/arduino_mk.conf` from the template in that directory and customize it to your board
+  and local environment. See other one-time setup instructions in that project's README.md and/or
+  the comment header of `arduino.mk`.
+* Build this library with `make install`
+* For other arduino-makefile-based projects, add this to your project's dependencies with
+  `libs := debounce`
+
+License
+-------
+
+This project is licensed under the BSD 3-Clause license. See LICENSE.txt for complete details.
+
