@@ -17,6 +17,7 @@ typedef void (*buttonHandler_t)(uint8_t id, uint8_t btnState);
 
 class Button {
 public:
+  Button();
   Button(uint8_t id, buttonHandler_t handlerFn);
 
   /**

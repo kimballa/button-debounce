@@ -6,6 +6,8 @@
 void emptyBtnHandler(uint8_t btnId, uint8_t btnState) {
 }
 
+Button::Button() : Button(0, NULL) {
+}
 
 Button::Button(uint8_t id, buttonHandler_t handlerFn):
     _id(id), _curState(BTN_OPEN), _priorPoll(BTN_OPEN), _readStartTime(0),
