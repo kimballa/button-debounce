@@ -53,7 +53,7 @@ wiring the SPST to GND, like so:
 ```
                          Vcc+
                  10k      ^
-(MCU pin) ------/\/\/\----|
+(MCU pin) ---+--/\/\/\----|
              |
              \
               \   SW1 (SPST-NO)
