@@ -41,6 +41,31 @@ void myBtnHandler(uint8_t btnId, uint8_t btnState) {
 }
 ```
 
+Button wiring diagram
+---------------------
+
+This library assumes that the GPIO input is pulled high (to Vcc) when the switch is open,
+and sunk low when the switch is closed. You can accomplish this by configuring the
+GPIO as `INPUT_PULLUP` and attaching an SPST switch between the GPIO pin and GND, or
+by configuring the GPIO pin as `INPUT`, attaching a 10 kOhm resistor to Vcc, and then
+wiring the SPST to GND, like so:
+
+```
+                         Vcc+
+                 10k      ^
+(MCU pin) ------/\/\/\----|
+             |
+             \
+              \   SW1 (SPST-NO)
+               \
+             |
+             |
+           (GND)
+```
+
+You can wire a switch in the reverse as well, but you should then reverse your
+usage of the `BTN_OPEN` and `BTN_PRESSED` constants in code that uses this library.
+
 Compiling
 ---------
 
