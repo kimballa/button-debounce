@@ -31,7 +31,7 @@ void setup() {
   myButton.setPushDebounceInterval(1000);
 
   // You can call setReleaseDebounceInterval() to configure the delay between when the
-  // user lets go, and when your function is called, although too long a time delay on
+  // user lets go and when your function is called, although too long a time delay on
   // release feels like a "sluggish" interface.
 }
 
