@@ -14,7 +14,7 @@ lib_name := debounce
 #mcu_specific_h := 1
 
 # Uncomment the following line to install your lib's headers to /default/include/path/${lib_name}
-use_header_suffix_dir := 1
+#use_header_suffix_dir := 1
 
 # Alternatively, use the following line to install your lib's headers to a different subpath
 # of the default include path:
