@@ -8,7 +8,7 @@ Buttons are mapped to handler functions which are called when the button has rel
 transitioned to the down (pressed) or up (released) positions. Glitches are filtered out
 by this debouncing library.
 
-Button inputs may be read directly from GPIO, over PCF8574 I2C bus (via libi2cparallel:
+Button inputs may be read directly from GPIO, over PCF8574 I2C bus (e.g. via libi2cparallel:
 https://github.com/kimballa/i2cparallel), or any other method. You should monitor the
 hardware signals in a polling loop. Each time you receive a new signal input sample, use
 `Button::update(signalValue)` to transmit the new sample.  The `Button` class itself does
@@ -29,7 +29,7 @@ void loop() {
 ```
 
 Each button is assigned a unique id (which can e.g. be the same as its index within a
-`vector<Button>` array), which is passed to the handler function along with the button
+`Button[]` array), which is passed to the handler function along with the button
 state (`BTN_OPEN` or `BTN_PRESSED`):
 
 ```
