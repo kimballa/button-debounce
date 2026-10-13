@@ -72,14 +72,17 @@ Compiling
 Find the `debounce` library in the Arduino IDE and add it to your project; make sure to
 `#include <debounce.h>`.
 
-Alternatively, I build this with my [Arduino
-makefile](https://github.com/kimballa/arduino-makefile):
+If using outside the Arduino IDE: This is a header-only library so no separate compilation
+step is required.
+
+I "build" this with my [Arduino
+makefile](https://github.com/kimballa/arduino-makefile) to add the header to the shared directory:
 
 * Clone the makefile project such that `arduino-makefile/` is a sibling of this project directory.
 * Create `~/arduino_mk.conf` from the template in that directory and customize it to your board
   and local environment. See other one-time setup instructions in that project's README.md and/or
   the comment header of `arduino.mk`.
-* Build this library with `make install`
+* Build this library with `make install` to install the header file in the shared include dir.
 * For other arduino-makefile-based projects, add this to your project's dependencies with
   `libs := debounce`
 
@@ -87,4 +90,3 @@ License
 -------
 
 This project is licensed under the BSD 3-Clause license. See LICENSE.txt for complete details.
-
