@@ -8,6 +8,14 @@
 // switch. By configuring different debounce intervals on different `Button`
 // instance with the same switch, separate "short press" and long press" actions
 // can be taken.
+//
+// NOTE: The actions here are cumulative, not mutually exclusive. As written,
+// holding the button down fires shortPressHandler() immediately (after 25 ms),
+// AND longPressHandler() after 1 s, AND the "rocket armed" message after 3 s.
+// Each Button independently watches the same pin, so a long press is also a
+// short press first. To take only one action depending on how long the button
+// was held, see the separateShortLong example, which uses a single Button and
+// Button::priorStateDuration().
 
 #include<Arduino.h>
 #include<debounce.h>
