@@ -15,6 +15,10 @@ constexpr uint8_t BTN_OPEN = 1;
 // A function called whenever a button has definitively changed state.
 typedef void (*buttonHandler_t)(uint8_t id, uint8_t btnState);
 
+/** A button handler that does nothing; for states when a given button is unmapped. */
+inline void emptyBtnHandler(uint8_t btnId, uint8_t btnState) {
+}
+
 class Button {
 public:
   Button() : Button(0, NULL) {};
@@ -106,9 +110,5 @@ private:
   unsigned int _releaseDebounceInterval;
   buttonHandler_t _handlerFn;
 };
-
-/** A button handler that does nothing; for states when a given button is unmapped. */
-inline void emptyBtnHandler(uint8_t btnId, uint8_t btnState) {
-}
 
 #endif /* _BUTTONS_H_ */
